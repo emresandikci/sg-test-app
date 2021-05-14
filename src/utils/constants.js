@@ -1,9 +1,9 @@
 const constant = {
   seo: {
-    title: 'React boilerplate',
+    title: 'SG Test App',
     description: '',
     baseUrl: 'http://www.emresandikci.com',
-    ogTitle: 'Full Stack Developer',
+    ogTitle: 'SG Test App',
     ogDescription: 'JS,Reactjs,Nodejs...',
     ogUrl: '',
     ogImage: '',

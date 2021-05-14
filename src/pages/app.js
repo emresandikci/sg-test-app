@@ -1,17 +1,16 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Box } from 'esducad-ui';
-import { defaultTheme, GlobalStyle } from 'esducad-ui/dist/utils';
 import { Home } from 'pages';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Seo } from 'utils';
+import { Seo, theme } from 'utils';
+import { GlobalStyles } from 'components';
 
 function App() {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <GlobalStyle />
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
       <Seo />
-      <Box>
+      <div>
         <Router>
           <Switch>
             <Route path="/">
@@ -19,7 +18,7 @@ function App() {
             </Route>
           </Switch>
         </Router>
-      </Box>
+      </div>
     </ThemeProvider>
   );
 }
