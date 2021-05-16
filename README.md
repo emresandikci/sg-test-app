@@ -1,6 +1,4 @@
-# React Easy Boilerplate by [emresandikci](https://emresandikci.com)
-
-### An Easy starter boilerplate for React.js
+# SG TEST APP
 
 <br/>
 
@@ -52,10 +50,14 @@ git commit -m "docs(readme): server link added"
 
 #
 
-# How to start local development on this repo
+# How to start local development environment on this repo
+
+## ENV file
+
+please create an <span style="color:red;"> .env </span> file and add <strong>APP_ID</strong> and <strong>APP_SECRET</strong> keys.
 
 To get this repo to your local development environment, run the below script in your terminal and Ta daa, it's running !!!
 
 ```bash
- git clone https://github.com/emresandikci/react-easy-boilerplate && cd react-easy-boilerplate && yarn install && yarn dev
+ git clone https://github.com/emresandikci/sg-test-app && cd sg-test-app && yarn install && yarn dev
 ```
