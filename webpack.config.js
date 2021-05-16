@@ -14,7 +14,7 @@ const getLocalExternalIP = () =>
 
 const PORT = 1992;
 
-module.exports = (env, { mode, mobile }) => {
+module.exports = (_, { mode, mobile }) => {
   const isProduction = mode === 'production' || process.env.NODE_ENV === 'production';
 
   if (mobile) {
@@ -24,8 +24,8 @@ module.exports = (env, { mode, mobile }) => {
     entry: path.resolve(__dirname, 'src/index.js'),
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: 'reb-es-[contenthash].js?v=[fullhash]',
-      chunkFilename: 'reb-es-[name].js?v=[fullhash]',
+      filename: 'sg-[contenthash].js?v=[fullhash]',
+      chunkFilename: 'sg-[name].js?v=[fullhash]',
       publicPath: '/',
     },
     mode,

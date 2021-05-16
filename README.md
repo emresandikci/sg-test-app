@@ -54,7 +54,7 @@ git commit -m "docs(readme): server link added"
 
 ## ENV file
 
-please create an <span style="color:red;"> .env </span> file and add <strong>APP_ID</strong> and <strong>APP_SECRET</strong> keys.
+please create an <span style="color:red;"> .env </span> file and add <strong style="color:red;">APP_ID</strong>, <strong style="color:red;">APP_SECRET</strong> and <strong style="color:red;">APP_URL</strong> keys.
 
 To get this repo to your local development environment, run the below script in your terminal and Ta daa, it's running !!!
 
