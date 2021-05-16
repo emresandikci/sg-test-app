@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Flex, Input, Button } from 'components';
+import React, { useState, useEffect, useContext } from 'react';
+import { Box, Flex, Input, Button, Popup } from 'components';
 import { routes } from 'utils';
 import useRouter from 'utils/hooks/useRouter';
 import { gift } from 'public/images';
@@ -10,6 +10,19 @@ function Home() {
   const [productCode, setProductCode] = useState('');
   const [merchantCode, setMerchantCode] = useState('');
   const [isValidCodes, setIsValidCodes] = useState('');
+  const { setIsActive } = useContext(Popup.Context);
+
+  useEffect(() => {
+    if (sessionStorage.getItem('shouldPreventWelcome')) return;
+
+    setIsActive(true);
+
+    sessionStorage.setItem('shouldPreventWelcome', true);
+  }, []);
+
+  useEffect(() => {
+    setIsValidCodes(productCode?.length >= 8 && merchantCode?.length >= 3);
+  }, [productCode, merchantCode]);
 
   const onProductCodeChange = ({ target: { value } }) => {
     setProductCode(value);
@@ -22,10 +35,6 @@ function Home() {
     let redirectUrl = createRedirectUrl();
     push(redirectUrl);
   };
-
-  useEffect(() => {
-    setIsValidCodes(productCode?.length >= 8 && merchantCode?.length >= 3);
-  }, [productCode, merchantCode]);
 
   const createRedirectUrl = () => {
     return productCode.includes(',')
