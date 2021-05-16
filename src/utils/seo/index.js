@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import constant from './constants';
+import constant from '../constants';
 
 function Seo({
   title,
@@ -80,21 +79,6 @@ function Seo({
     </Helmet>
   );
 }
-
-Seo.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  canonicalUrl: PropTypes.string,
-  prevUrl: PropTypes.string,
-  nextUrl: PropTypes.string,
-  ogTitle: PropTypes.string,
-  ogDescription: PropTypes.string,
-  ogImage: PropTypes.string,
-  ogMediaType: PropTypes.string,
-  customMetaTags: PropTypes.element,
-  isNoIndex: PropTypes.bool,
-};
-
 Seo.defaultProps = {
   title: null,
   description: null,
