@@ -25,8 +25,8 @@ const fonts = {
 };
 
 const lineHeights = {
-  title: 22,
-  text: 16,
+  title: 2,
+  text: 1,
   button: 1,
 };
 
