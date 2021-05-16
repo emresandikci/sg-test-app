@@ -7,3 +7,4 @@ export { default as Input } from './input';
 export { default as Popup } from './popup';
 export { default as Card } from './card';
 export { default as ThemeSetting } from './themeSetting';
+export { default as ItemDetail } from './itemDetail';

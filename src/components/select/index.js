@@ -5,6 +5,7 @@ import BaseElement from '../baseElement';
 const Select = styled(BaseElement).attrs({
   as: 'select',
 })`
+  /* appearance: none; */
   outline: none;
   user-select: none;
   cursor: pointer;

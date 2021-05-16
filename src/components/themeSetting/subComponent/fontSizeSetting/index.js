@@ -4,7 +4,14 @@ import { Box, Input } from 'components';
 export default function FontSizeSetting({ theme, setFontSize }) {
   return (
     <Box>
-      <Box as="p">Font Size:</Box>
+      <Box
+        as="p"
+        css={`
+          margin: 10px 0;
+        `}
+      >
+        Font Size:
+      </Box>
       <Box>
         <Input
           type="number"

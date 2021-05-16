@@ -5,12 +5,19 @@ import ColorBox from '../colorBox';
 export default function ColorSetting({ theme, setColor }) {
   return (
     <Box>
-      <Box as="p">Color:</Box>
+      <Box
+        as="p"
+        css={`
+          margin: 10px 0;
+        `}
+      >
+        Color:
+      </Box>
       <Box
         css={`
           display: flex;
           flex-wrap: wrap;
-          justify-content: space-around;
+          justify-content: space-between;
         `}
       >
         {Object.entries(theme.colors)

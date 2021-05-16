@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Flex, Box, Select, Button } from 'components';
+import { Flex, Box, Button } from 'components';
 import { Popup } from 'components';
 import { currency } from 'utils';
+import { Attribute, Tags } from './subComponents';
 
 const initialSKU = {
   name: '',
@@ -32,10 +33,6 @@ export default function ItemDetail({ data }) {
     setSelectedSku(data?.selectedSku);
   }, []);
 
-  useEffect(() => {
-    if (selectedSku) setMessage(selectedSku.sku);
-  }, [selectedSku]);
-
   const onColorChange = (e) => {
     const { value } = e.target;
     if (!value) return;
@@ -50,6 +47,7 @@ export default function ItemDetail({ data }) {
 
   const onAcceptBtnClick = () => {
     setIsActive(true);
+    setMessage(selectedSku.sku);
   };
 
   const { attrList, skus, tags } = product;
@@ -102,61 +100,23 @@ export default function ItemDetail({ data }) {
           flex: 1;
         `}
       >
-        <Box
-          css={`
-            font-size: 32px;
-            line-height: 2;
-          `}
-        >
-          {name}
-        </Box>
-        <Box
+        <Box as="h1">{name}</Box>
+        <Attribute
+          width={1 / 2}
+          attrList={attrList.Color}
+          attrs={attrs.Color}
           css={`
             margin-bottom: 10px;
           `}
-        >
-          <Select width={1 / 2} value={attrs.Color} onChange={onColorChange}>
-            {attrList.Color?.map((item, i) => (
-              <option value={item} key={item + i}>
-                {item}
-              </option>
-            ))}
-          </Select>
-        </Box>
-        <Box>
-          <Select width={1 / 2} value={attrs.Size} onChange={onSizeChange}>
-            {attrList.Size?.map((item, i) => (
-              <option value={item} key={item + i}>
-                {item}
-              </option>
-            ))}
-          </Select>
-        </Box>
-        <Flex
-          css={`
-            margin-top: 10px;
-            flex-wrap: wrap;
-          `}
-        >
-          {tags?.map(({ name }, i) => (
-            <Box
-              key={i}
-              css={`
-                margin: 5px 0;
-                margin-right: ${tags.length - 1 !== i && '5px'};
-              `}
-            >
-              <Button
-                variant="outline"
-                css={`
-                  cursor: default;
-                `}
-              >
-                {name}
-              </Button>
-            </Box>
-          ))}
-        </Flex>
+          onChange={onColorChange}
+        />
+        <Attribute
+          width={1 / 2}
+          attrList={attrList.Size}
+          attrs={attrs.Size}
+          onChange={onSizeChange}
+        />
+        <Tags tags={tags} />
         <Box
           css={`
             margin-top: 10px;

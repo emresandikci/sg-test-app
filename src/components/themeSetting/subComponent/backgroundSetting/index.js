@@ -5,12 +5,19 @@ import ColorBox from '../colorBox';
 export default function BackgroundSetting({ theme, setMode, mode, modes }) {
   return (
     <Box>
-      <Box as="p">Background:</Box>
+      <Box
+        as="p"
+        css={`
+          margin: 10px 0;
+        `}
+      >
+        Background:
+      </Box>
       <Box
         css={`
           display: flex;
           flex-wrap: wrap;
-          justify-content: space-around;
+          justify-content: space-between;
         `}
       >
         <ColorBox
