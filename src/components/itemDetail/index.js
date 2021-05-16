@@ -79,7 +79,7 @@ export default function ItemDetail({ data }) {
                 padding: 0.5rem;
                 position: absolute;
                 left: 0;
-                bottom: 6px;
+                bottom: 5px;
                 font-size: 16px;
               `}
             >
